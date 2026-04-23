@@ -1,0 +1,26 @@
+---
+title: "Building a Personalized Recommendation System"
+author: "Pascal Hermann Kouogang Tafo"
+format: html
+editor: visual
+---
+
+## INTRODUCTION
+
+This assignment builds a personalized recommended system using survey data from "TV_Show_ratings.csv" that i manually created. The goal is to predict user preferences and recommend new TV shows, the users are likely to enjoy. To accomplish that goal, we will be implementing a **User-to-User Collaborative Filtering** algorithm using cosine similarity, generate top-N recommendations, and evaluate model performance.
+
+------------------------------------------------------------------------
+
+## APPROACH
+
+The **User-to-User Collaborative Filtering** algorithm identifies users with similar tastes based on their past ratings and predicts ratings for items a user has not seen yet by **aggregating** the ratings of their "nearest neighbors". To build that personalized recommended system, we will be using the following approach:
+
+-   Load the **"TV_Show_ratings.csv"** from my public GitHub and convert it into a wide-format user-item matrix.
+
+-   Calculate the average rating for each user and subtract it from their ratings to account for individual rating biases.
+
+-   Use **Cosine Similarity** on the centered ratings to determine how similar users are to one another.
+
+-   For any unwatched show, calculate a weighted average of the ratings given by the most similar users.
+
+------------------------------------------------------------------------
